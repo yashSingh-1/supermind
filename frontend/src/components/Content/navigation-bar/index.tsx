@@ -61,8 +61,8 @@ const NavigationBar = ({ slug }: Props) => {
               </Sheet>
             </div>
 
-            <SearchBar />
-            <CreateAutomations />
+            {/* <SearchBar /> */}
+            {/* <CreateAutomations /> */}
             {/* <Notifications /> */}
           </div>
           <MainBreadCrumb page={page === slug ? 'Home' : page} slug={slug} />

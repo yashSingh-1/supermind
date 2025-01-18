@@ -15,7 +15,9 @@ const Loader = ({
     color
 }: Props) => {
   return state ? <div className={cn(className)}>
+    <div className="flex flex-col gap-y-4">
     <Spinner color={color} />
+    </div>
   </div> : (children)
 }
 

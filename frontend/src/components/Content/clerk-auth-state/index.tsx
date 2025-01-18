@@ -29,7 +29,7 @@ const ClerkAuthState = () => {
         <UserButton>
           <UserButton.UserProfileLink
             label="Dashboard"
-            url={"/dashboard"}
+            url={"/dashboard/home"}
             labelIcon={<User size={16} />}
           />
         </UserButton>

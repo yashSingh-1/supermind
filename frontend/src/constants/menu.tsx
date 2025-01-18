@@ -23,12 +23,12 @@ import {
     },
     {
       id: uuid(),
-      label: 'automations',
+      label: 'analyse',
       icon: <AutomationDuoToneWhite />,
     },
     {
       id: uuid(),
-      label: 'integrations',
+      label: 'generation',
       icon: <RocketDuoToneWhite />,
     },
     {
