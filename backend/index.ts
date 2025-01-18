@@ -7,7 +7,12 @@ import dbConnect, {
   userData_Collection,
 } from "./db/connect";
 
+import Groq from "groq-sdk";
 dotenv.config();
+
+const groq_client = new Groq({
+  apiKey: process.env["GROQ_API_KEY"],
+});
 
 dbConnect();
 
@@ -15,10 +20,6 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-
-app.get("/test", (req: Request, res: Response) => {
-  res.send("It is working");
-});
 
 app.get("/get-history", async (req: Request, res: Response) => {
   const companyId = req.query.companyid;
@@ -36,6 +37,35 @@ app.get("/get-history", async (req: Request, res: Response) => {
       .json({ response, message: "Company history is fetched successfully" });
   } catch (e) {
     res.status(500).json({ message: "Error in fetching company history" });
+  }
+});
+
+app.post("/generate", async (req: Request, res: Response) => {
+  const prompt = req.body.prompt;
+  console.log(process.env.GROQ_API_KEY);
+
+  if (!prompt) {
+    res.status(404).json({ message: "Prompt is not given" });
+    return;
+  }
+
+  try {
+    const chatCompletion = await groq_client.chat.completions.create({
+      messages: [
+        {
+          role: "user",
+          content: `You are an advertising expert. Generate a heading, subheading, a small description, and a list of keywords to boost the ad for a product and also follow the following prompt: ${prompt}. Provide the response in JSON format only. Don't include any text except JSON`,
+        },
+      ],
+      model: "llama3-70b-8192",
+    });
+
+    const response = chatCompletion.choices[0].message.content;
+
+    res.status(200).json({ message: "Generated successfully", response });
+  } catch (e) {
+    console.log(e);
+    res.status(500).json({ message: "Error in generation in the server" });
   }
 });
 

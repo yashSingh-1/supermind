@@ -139,7 +139,7 @@ export async function runAIWorkFlow(
   outputType = "chat",
   stream = false
 ) {
-  const flowIdOrName = "a0db79f2-1d5a-4208-8bbf-6961f6d8e1ca";
+  const flowIdOrName = "1eceaf43-7162-4d36-a051-361817d79a87";
   const langflowId = "e134bff0-68df-4644-9f42-d149863edccf";
   const applicationToken = process.env.LANGFLOW_APPLICATION_TOKEN;
   const langflowClient = new LangflowClient(
