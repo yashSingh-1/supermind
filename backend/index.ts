@@ -63,7 +63,12 @@ app.post("/generate", async (req: Request, res: Response) => {
 
     const response = chatCompletion.choices[0].message.content;
 
-    res.status(200).json({ message: "Generated successfully", response });
+    res
+      .status(200)
+      .json({
+        message: "Generated successfully",
+        response: JSON.parse(response),
+      });
   } catch (e) {
     console.log(e);
     res.status(500).json({ message: "Error in generation in the server" });
