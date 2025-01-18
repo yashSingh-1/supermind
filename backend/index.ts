@@ -1,12 +1,14 @@
 import express, { Request, Response } from "express";
 import cors from "cors";
 import dotenv from "dotenv";
+import { runAIWorkFlow } from "./workflow/langflow_workflow";
 
 dotenv.config();
 
 const app = express();
 
 app.use(cors());
+app.use(express.json());
 
 app.get("/test", (req: Request, res: Response) => {
   res.send("It is working");
@@ -20,11 +22,15 @@ app.post("/chat", async (req: Request, res: Response) => {
   }
 
   try {
-    const response = "dummy response";
+    console.log(prompt);
+    const response = await runAIWorkFlow(prompt);
 
     res
       .status(200)
-      .json({ response, message: "Response is fetched successfully" });
+      .json({
+        response: JSON.parse(response),
+        message: "Response is fetched successfully",
+      });
   } catch (e) {
     res.status(500).json({ message: "Internal server error" });
   }
