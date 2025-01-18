@@ -58,11 +58,12 @@ app.post("/save-history", async (req: Request, res: Response) => {
 app.post("/save-user-data", async (req: Request, res: Response) => {
   const user_data: {
     user_id: string;
+    company_id: string;
     age: number;
     gender: string;
     location: string;
-    occupation: string;
     education_level: string;
+    income_range: string;
   }[] = req.body.userData;
 
   try {
