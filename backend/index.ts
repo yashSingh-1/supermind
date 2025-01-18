@@ -29,12 +29,15 @@ app.get("/get-history", async (req: Request, res: Response) => {
   }
 
   try {
-    const response = await history_Collection.find({ companyId });
-    console.log(response);
+    const response = history_Collection.find({ companyId });
+    const data = await response.toArray();
 
     res
       .status(200)
-      .json({ response, message: "Company history is fetched successfully" });
+      .json({
+        response: data,
+        message: "Company history is fetched successfully",
+      });
   } catch (e) {
     res.status(500).json({ message: "Error in fetching company history" });
   }
