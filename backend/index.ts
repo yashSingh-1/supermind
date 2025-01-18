@@ -32,12 +32,10 @@ app.get("/get-history", async (req: Request, res: Response) => {
     const response = history_Collection.find({ companyId });
     const data = await response.toArray();
 
-    res
-      .status(200)
-      .json({
-        response: data,
-        message: "Company history is fetched successfully",
-      });
+    res.status(200).json({
+      response: data,
+      message: "Company history is fetched successfully",
+    });
   } catch (e) {
     res.status(500).json({ message: "Error in fetching company history" });
   }
@@ -112,6 +110,8 @@ app.post("/save-user-data", async (req: Request, res: Response) => {
 
 app.post("/chat", async (req: Request, res: Response) => {
   const prompt = req.body.prompt;
+  const companyId = req.body.companyId;
+
   if (!prompt) {
     res.status(404).json({ message: "Prompt is not given" });
     return;
@@ -119,7 +119,9 @@ app.post("/chat", async (req: Request, res: Response) => {
 
   try {
     console.log(prompt);
-    const response = await runAIWorkFlow(prompt);
+    const response = await runAIWorkFlow(
+      `${prompt} with company id ${companyId}`
+    );
 
     res.status(200).json({
       response: JSON.parse(response),
