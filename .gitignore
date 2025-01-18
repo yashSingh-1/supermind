@@ -6,6 +6,10 @@ backend/node_modules
 
 frontend/.env
 backend/.env
+
+backend/dist
+
+
 /.pnp
 .pnp.js
 .yarn/install-state.gz

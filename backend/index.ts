@@ -1,4 +1,4 @@
-import express from "express";
+import express, { Request, Response } from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 
@@ -8,11 +8,11 @@ const app = express();
 
 app.use(cors());
 
-app.get("/test", (req, res) => {
+app.get("/test", (req: Request, res: Response) => {
   res.send("It is working");
 });
 
-app.post("/chat", async (req, res) => {
+app.post("/chat", async (req: Request, res: Response) => {
   const prompt = req.body.prompt;
   if (!prompt) {
     res.status(404).json({ message: "Prompt is not given" });
