@@ -124,3 +124,8 @@ enum LISTENERS {
   MESSAGE
 }
 
+model KeywordPrompt {
+  id String @id @unique @default(uuid())
+  keyword String
+}
+
