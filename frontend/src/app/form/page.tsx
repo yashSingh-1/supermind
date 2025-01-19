@@ -43,7 +43,7 @@ const FormComponent = () => {
     defaultValues: {
       username: "",
       gender: "male",
-      age: 0,
+      age: 21,
       location: "",
       education_level: "",
       income: "high",
@@ -66,7 +66,7 @@ const FormComponent = () => {
   const [location, setLocation] = useState<string>("urban");
   const [graduation, setgraduation] = useState<string>("graduated");
   const [income, setIncome] = useState<string>("high");
-  const [age, setAge] = useState<number>(20);
+  const [age, setAge] = useState<Number>();
   const [msg, setMsg] = useState("");
 
   const handleSubmit = async () => {
@@ -128,6 +128,7 @@ const FormComponent = () => {
                   <Input
                     placeholder="for ex: 18"
                     {...field}
+                    value={age as number}
                     onChange={(e) => setAge(Number(e.target.value))}
                   />
                 </FormControl>
