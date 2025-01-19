@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export function Hero() {
   return (
@@ -8,23 +8,21 @@ export function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             <h1 className="text-5xl font-bold tracking-tight text-primary">
-              Some Placeholder, write as you please here!
+              Create Ads That Truly Connect
             </h1>
             <p className="text-xl text-muted-foreground">
-              Write the description of whatever tf we are making here! make it like more than 20 words
-              so that it can touch 3 lines
+              Unleash the power of data-driven insights to craft impactful,
+              audience-focused advertisements
             </p>
             <div className="flex gap-4">
-              <Link href={"/dashboard/home"} >
-              <Button size="lg">Get Started</Button>
-              
+              <Link href={"/dashboard/home"}>
+                <Button size="lg">Get Started</Button>
               </Link>
-              <Button size="lg" variant="outline">Learn More</Button>
             </div>
           </div>
           <div className="relative">
             <img
-              src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+              src="https://s7d9.scene7.com/is/image/lamar/Hero%20-%20Billboards-1:Desktop?ts=1716227406208&fit=fit,1&dpr=on,2.625"
               alt="App presentation preview"
               className="rounded-lg shadow-2xl"
               width={600}
@@ -34,6 +32,5 @@ export function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-
