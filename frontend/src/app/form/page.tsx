@@ -128,7 +128,7 @@ const FormComponent = () => {
                   <Input
                     placeholder="for ex: 18"
                     {...field}
-                    onChange={(e) => setAge(parseInt(e.target.value))}
+                    onChange={(e) => setAge(Number(e.target.value))}
                   />
                 </FormControl>
                 <FormMessage />

@@ -63,10 +63,10 @@ const Sidebar = ({ slug }: Props) => {
               <ClerkAuthState />
               <p className="text-[#9B9CA0]">Profile</p>
             </div>
-            <div className="flex gap-x-3">
+            {/* <div className="flex gap-x-3">
               <HelpDuoToneWhite />
               <p className="text-[#9B9CA0]">Help</p>
-            </div>
+            </div> */}
           </div>
         </div>
         {/* <SubscriptionPlan type={"FREE"}>
