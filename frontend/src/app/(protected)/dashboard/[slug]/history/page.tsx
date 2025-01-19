@@ -9,7 +9,7 @@ import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
-const page = ({ prompt }: any) => {
+const Page = ({ prompt }: any) => {
   const [response, setResponse] = useState<
     { companyId: string; prompt: string }[]
   >([]);
@@ -79,4 +79,4 @@ const page = ({ prompt }: any) => {
   );
 };
 
-export default page;
+export default Page;

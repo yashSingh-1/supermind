@@ -13,7 +13,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-const page = () => {
+const Page = () => {
   const [response, setResponse] = useState<
     | {
         heading: string;
@@ -64,8 +64,8 @@ const page = () => {
                 <p className="border-r">
                   Keywords to use:
                 </p>
-                <p className="grid grid-cols-6">{response.keywords.map((words) => (
-                  <div className="rounded-md flex justify-center text-xs items-center m-auto border p-2 mx-2 my-1 bg-transparent">
+                <p className="grid grid-cols-6">{response.keywords.map((words, index) => (
+                  <div key={index} className="rounded-md flex justify-center text-xs items-center m-auto border p-2 mx-2 my-1 bg-transparent">
                     {words}
                   </div>
                 ))}</p>
@@ -103,4 +103,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

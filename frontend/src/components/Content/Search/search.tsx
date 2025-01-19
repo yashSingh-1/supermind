@@ -111,8 +111,8 @@ const SearchBar = () => {
         <div className="text-white w-full my-5 border-b-2 rounded-sm p-4">
           <span className="font-bold">High Performing hooks</span>
           <div className=" grid grid-cols-3">
-            {response?.high_performing_hooks.map((item: any) => (
-              <div className="grid grid-cols-2 lg:grid-cols-3 mt-2">
+            {response?.high_performing_hooks.map((item: any, index:any) => (
+              <div className="grid grid-cols-2 lg:grid-cols-3 mt-2" key={index}>
                 <CardDemo name={item.answer} description={item.description} />
               </div>
             ))}
@@ -121,8 +121,8 @@ const SearchBar = () => {
         <div className="text-white w-full my-5 border-b-2 rounded-sm p-4">
           <span className="font-bold">Call to Action</span>
           <div className=" grid grid-cols-3">
-            {response?.CTAs.map((item: any) => (
-              <div className="grid grid-cols-3 lg:grid-cols-3 mt-2">
+            {response?.CTAs.map(( item: any, index:any) => (
+              <div className="grid grid-cols-3 lg:grid-cols-3 mt-2" key={index}>
                 <CardDemo name={item.answer} description={item.description} />
               </div>
             ))}
@@ -131,8 +131,8 @@ const SearchBar = () => {
         <div className="text-white w-full my-5 border-b-2 rounded-sm p-4">
           <span className="font-bold">Trends</span>
           <div className=" grid grid-cols-3">
-            {response?.trends.map((item: any) => (
-              <div className="grid grid-cols-3 lg:grid-cols-3 mt-2">
+            {response?.trends.map((item: any, index:any) => (
+              <div className="grid grid-cols-3 lg:grid-cols-3 mt-2" key={index}>
                 <CardDemo name={item.answer} description={item.description} />
               </div>
             ))}
@@ -141,8 +141,8 @@ const SearchBar = () => {
         <div className="text-white w-full my-5 border-b-2 rounded-sm p-4">
           <span className="font-bold">Solutions</span>
           <div className=" grid grid-cols-3">
-            {response?.effective_solutions.map((item: any) => (
-              <div className="grid grid-cols-3 lg:grid-cols-3 mt-2">
+            {response?.effective_solutions.map((item: any, index:any) => (
+              <div className="grid grid-cols-3 lg:grid-cols-3 mt-2" key={index}>
                 <CardDemo name={item.answer} description={item.description} />
               </div>
             ))}
@@ -151,8 +151,8 @@ const SearchBar = () => {
         <div className="text-white w-full my-5 border-b-2 rounded-sm p-4">
           <span className="font-bold">Pain Points</span>
           <div className=" grid grid-cols-3">
-            {response?.pain_points.map((item: any) => (
-              <div className="grid grid-cols-3 lg:grid-cols-3 mt-2">
+            {response?.pain_points.map((item: any, index:any) => (
+              <div className="grid grid-cols-3 lg:grid-cols-3 mt-2" key={index}>
                 <CardDemo name={item.answer} description={item.description} />
               </div>
             ))}
