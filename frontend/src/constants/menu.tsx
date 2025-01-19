@@ -23,7 +23,7 @@ import {
     },
     {
       id: uuid(),
-      label: 'analyse',
+      label: 'history',
       icon: <AutomationDuoToneWhite />,
     },
     {
@@ -33,7 +33,7 @@ import {
     },
     {
       id: uuid(),
-      label: 'settings',
+      label: 'survey',
       icon: <SettingsDuoToneWhite />,
     },
   ]
