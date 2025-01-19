@@ -43,7 +43,7 @@ const FormComponent = () => {
     defaultValues: {
       username: "",
       gender: "male",
-      age: 20,
+      age: 0,
       location: "",
       education_level: "",
       income: "high",
